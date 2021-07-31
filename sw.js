@@ -10,7 +10,7 @@ self.addEventListener('install', async e => {
 
   // cache就可以存取资源
   try {
-    await cache.addAll(['/mainifest.json', '/'])
+    await cache.addAll(['./mainifest.json', './'])
   } catch (error) {
     console.log('e', error)
   }
