@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="mainfest" href="mainifest.json" />
+  </head>
+  <body>
+    <h1>hello pwa</h1>
+    <script>
+      window.addEventListener('load', async () => {
+        if ('serviceWorker' in navigator) {
+          try {
+            const regs = await navigator.serviceWorker.register('./sw.js')
+            console.log('注册成功', regs)
+          } catch (error) {
+            console.log('注册失败', error)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
